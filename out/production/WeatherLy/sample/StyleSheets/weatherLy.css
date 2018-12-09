@@ -1,0 +1,12 @@
+#timePane{
+    /*-fx-background-color: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);*/
+    /*-fx-border-color: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%);*/
+    /*-fx-background-color: linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);*/
+    /*-fx-border-color:linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);*/
+    -fx-background-color: linear-gradient(to left, #e0c3fc 0%, #8ec5fc 100%);
+    -fx-border-color:linear-gradient(to right, #e0c3fc 0%, #8ec5fc 100%);
+    -fx-border-width: 3;
+}
+#TimeEanbleDisable{
+    -fx-background-color: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
+}

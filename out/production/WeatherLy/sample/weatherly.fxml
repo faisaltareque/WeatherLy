@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MyPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #cdfbe5;" stylesheets="@StyleSheets/weatherLy.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.weatherlyController">
+    <children>
+        <Pane prefHeight="540.0" prefWidth="960.0">
+            <children>
+                <ImageView fx:id="ImageLayerWinter" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/Weather%20Background/Winter5.jpg" />
+                    </image>
+                </ImageView>
+            <ImageView fx:id="ImageLayerSummer" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Weather%20Background/Summer1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerRain" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Weather%20Background/Rainy1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerNight" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Weather%20Background/night.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerCloud2" fitHeight="400.0" fitWidth="460.0" layoutX="-216.0" layoutY="-100.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/little%20cloud.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerCloud3" fitHeight="400.0" fitWidth="460.0" layoutX="581.0" layoutY="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/little%20cloud.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerSun" fitHeight="180.0" fitWidth="180.0" layoutX="380.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/fe91f09efea762fba7b2a9ea4e6971a1.png" />
+               </image>
+            </ImageView>
+                <Label fx:id="LabelCityName" alignment="CENTER" layoutX="100.0" layoutY="140.0" prefHeight="65.0" prefWidth="180.0" text="DHAKA" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="TextFieldSearchLocation" alignment="CENTER" labelFloat="true" layoutX="100.0" layoutY="90.0" prefHeight="38.0" prefWidth="175.0" promptText="Search Location" unFocusColor="#5e4bb2">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </JFXTextField>
+                <Label fx:id="LabelHumidityStatic" layoutX="75.0" layoutY="265.0" prefHeight="35.0" prefWidth="125.0" text="Humidity :" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="20.0" />
+                    </font></Label>
+                <JFXButton fx:id="ButtonSearchLocation" buttonType="RAISED" layoutX="310.0" layoutY="95.0" onAction="#searchLocationButtonAction" style="-fx-background-color: #85a2ea;" text="Search">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </JFXButton>
+                <Label fx:id="LabelWindSpeedStatic" layoutX="75.0" layoutY="315.0" prefHeight="35.0" prefWidth="150.0" text="Wind Speed :">
+                    <font>
+                        <Font name="Monaco" size="20.0" />
+                    </font></Label>
+                <Label alignment="CENTER" layoutX="95.0" layoutY="360.0" prefHeight="61.0" prefWidth="210.0" text="Temperature" textAlignment="CENTER" textFill="#3ea0eb" wrapText="true">
+                    <font>
+                        <Font name="Monaco" size="27.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="ButtonFahrenheit" buttonType="RAISED" layoutX="50.0" layoutY="440.0" onAction="#fahrenheitButtonAction" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #48c6ef;" text="Fahrenheit">
+                    <font>
+                        <Font name="Monaco" size="16.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ButtonCelsius" layoutX="50.0" layoutY="490.0" onAction="#celsiusButtonAction" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: c471f5;" text="Celsius">
+                    <font>
+                        <Font name="Monaco" size="16.0" />
+                    </font>
+                </JFXButton>
+            <ImageView fx:id="ImageLayerCelsiusBackground" fitHeight="60.0" fitWidth="125.0" layoutX="200.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Gradient/CelciusBackgroind.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImageLayerFahrenheitBackground" fitHeight="60.0" fitWidth="125.0" layoutX="200.0" layoutY="445.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Gradient/FahrenheitBackground.png" />
+               </image>
+            </ImageView>
+                <Label fx:id="LabelTemperature" alignment="CENTER" layoutX="200.0" layoutY="445.0" prefHeight="60.0" prefWidth="125.0" text="29.5' C">
+                    <font>
+                        <Font name="Monaco" size="23.0" />
+                    </font>
+                </Label>
+                <Line endX="460.0" endY="480.0" fill="BLACK" layoutY="-17.0" startX="460.0" startY="220.0" strokeWidth="3.0" />
+            <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="490.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Gradient/min%20and%20max%20Temp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="490.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Gradient/min%20and%20max%20Temp.png" />
+               </image>
+            </ImageView>
+                <Label alignment="CENTER" layoutX="490.0" layoutY="200.0" prefHeight="50.0" prefWidth="200.0" text="Min. Temperature" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="490.0" layoutY="320.0" prefHeight="50.0" prefWidth="200.0" text="Max. Temperature" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelMinTemperature" alignment="CENTER" layoutX="535.0" layoutY="270.0" prefHeight="35.0" prefWidth="100.0" text="28' C" textFill="#3ea0eb">
+                    <font>
+                        <Font name="Monaco" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelMaxTemperature" alignment="CENTER" layoutX="535.0" layoutY="370.0" prefHeight="35.0" prefWidth="100.0" text="34' C" textFill="#3ea0eb">
+                    <font>
+                        <Font name="Monaco" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="745.0" layoutY="195.0" prefHeight="50.0" prefWidth="190.0" text="Weather Summary" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="19.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="ButtonRefresh" alignment="CENTER" layoutX="845.0" layoutY="85.0" onAction="#refreshButtonAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #3a54c3;" text="Refresh" textAlignment="CENTER">
+                    <font>
+                        <Font name="Monaco" size="15.0" />
+                    </font>
+                </JFXButton>
+            <Label fx:id="LabelHumidity" alignment="CENTER" layoutX="225.0" layoutY="265.0" prefHeight="35.0" prefWidth="105.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="LabelWindSpeed" alignment="CENTER" layoutX="225.0" layoutY="315.0" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #00000000;" textAlignment="CENTER">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="ButtonGPS" buttonType="RAISED" layoutX="10.0" layoutY="90.0" onAction="#gpsButtonAction" prefHeight="35.0" prefWidth="60.0" ripplerFill="#8a4c4c00" style="-fx-background-color: #3a54c3;" text="Live">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="LabelWeatherDescription" alignment="CENTER" layoutX="747.0" layoutY="250.0" prefHeight="50.0" prefWidth="190.0">
+               <font>
+                  <Font name="Monaco" size="14.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="ProgressBarCloudLevel" layoutX="750.0" layoutY="488.0" prefWidth="200.0" progress="0.25" style="-fx-background-color: #4762cb;" />
+            <Label fx:id="LabelPressureStatic" layoutX="75.0" layoutY="215.0" prefHeight="35.0" prefWidth="125.0" text="Pressure :" textAlignment="CENTER">
+               <font>
+                  <Font name="Monaco" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="LabelPressure" alignment="CENTER" layoutX="225.0" layoutY="215.0" prefHeight="35.0" prefWidth="105.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="180.0" layoutX="550.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Gradient/CloudLevelBackGround.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LabelCloudLevel" alignment="CENTER" layoutX="550.0" layoutY="480.0" prefHeight="35.0" prefWidth="180.0" text="Cloud Level : 25" wrapText="true">
+               <font>
+                  <Font name="Monaco" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/if_location-alt_126573.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon01d" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/01d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon01n" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/01n.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon02d" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/02d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon02n" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/02n.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon03dn" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/03d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon04dn" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/04d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon09dn" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/09d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon10d" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/10d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon10n" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/10n.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon11d" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/11d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Icon11n" fitHeight="100.0" fitWidth="100.0" layoutX="785.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/WeatherIcon/11n.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LabelErrorComment" alignment="CENTER" layoutX="379.0" layoutY="477.0" opacity="0.0" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #000000; -fx-border-color: #999999; -fx-border-width: 3;" textFill="RED">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="ImageLayerMainIcon" fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/App%20Logo/WeatherLy%20-%20Copy.png" />
+               </image>
+            </ImageView>
+            <JFXButton id="TimeEanbleDisable" fx:id="TimeEanbleDisable" contentDisplay="CENTER" layoutX="50.0" layoutY="15.0" onAction="#timeEnabler" text="Time">
+               <font>
+                  <Font name="Monaco" size="15.0" />
+               </font>
+            </JFXButton>
+            <Pane id="timePane" fx:id="PaneTime" layoutX="150.0" opacity="0.8" prefHeight="65.0" prefWidth="675.0">
+               <children>
+                  <Label fx:id="LabelWeekDay" alignment="CENTER" layoutX="365.0" layoutY="8.0" prefHeight="50.0" prefWidth="145.0" text="Wednesday" textFill="#1c63e8">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelDate" alignment="CENTER" layoutX="510.0" layoutY="18.0" prefHeight="35.0" prefWidth="30.0" text="24">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelMonth" alignment="CENTER" layoutX="540.0" layoutY="18.0" prefHeight="35.0" prefWidth="80.0" text="October">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelYear" alignment="CENTER" layoutX="620.0" layoutY="18.0" prefHeight="35.0" prefWidth="50.0" text="2018">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Line id="dateTimeSeparator" endX="455.0" endY="373.0" fill="BLACK" layoutX="-159.0" layoutY="-319.0" startX="455.0" startY="330.0" stroke="#616161" strokeWidth="6.0" />
+                  <Label fx:id="LabelHour" alignment="CENTER" layoutX="60.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="12">
+                     <font>
+                        <Font name="Old English Text MT" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelMinute" alignment="CENTER" layoutX="120.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="12">
+                     <font>
+                        <Font name="Old English Text MT" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelSecond" alignment="CENTER" layoutX="180.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="12">
+                     <font>
+                        <Font name="Old English Text MT" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelColon1" layoutX="110.0" prefWidth="10.0" text=":">
+                     <font>
+                        <Font name="System Bold" size="41.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelColon2" layoutX="170.0" text=":">
+                     <font>
+                        <Font name="System Bold" size="41.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelAMPM" layoutX="240.0" layoutY="20.0" text="PM">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="ImageViewClock" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/clipart-clock-clipart-3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ImageViewCalendar" fitHeight="50.0" fitWidth="50.0" layoutX="305.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/calendar-silhouette-8.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
